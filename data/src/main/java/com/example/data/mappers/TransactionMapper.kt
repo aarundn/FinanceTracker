@@ -1,8 +1,8 @@
-package com.example.financetracker.domain.mappers
+package com.example.data.mappers
 
-import com.example.financetracker.data.model.TransactionEntity
-import com.example.financetracker.domain.model.Transaction
-import com.example.financetracker.domain.model.TransactionType
+import com.example.data.model.TransactionEntity
+import com.example.domain.model.Transaction
+import com.example.domain.model.TransactionType
 
 fun Transaction.toEntity(): TransactionEntity {
     return TransactionEntity(

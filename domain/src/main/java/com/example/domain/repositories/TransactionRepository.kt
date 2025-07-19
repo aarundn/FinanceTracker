@@ -1,6 +1,6 @@
-package com.example.financetracker.domain.repositories
+package com.example.domain.repositories
 
-import com.example.financetracker.domain.model.Transaction
+import com.example.domain.model.Transaction
 import kotlinx.coroutines.flow.Flow
 
 interface TransactionRepository {

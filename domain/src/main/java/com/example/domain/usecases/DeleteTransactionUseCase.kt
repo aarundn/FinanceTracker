@@ -1,6 +1,6 @@
-package com.example.financetracker.domain.usecases
+package com.example.domain.usecases
 
-import com.example.financetracker.domain.repositories.TransactionRepository
+import com.example.domain.repositories.TransactionRepository
 import javax.inject.Inject
 
 class DeleteTransactionUseCase @Inject constructor(

@@ -2,7 +2,6 @@ package com.example.financetracker.presentation.features.home
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
@@ -15,8 +14,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.financetracker.domain.model.Transaction
-import com.example.financetracker.domain.model.TransactionType
+import com.example.domain.model.Transaction
+import com.example.domain.model.TransactionType
 import kotlinx.coroutines.flow.collectLatest
 import java.text.SimpleDateFormat
 import java.util.*
@@ -147,11 +146,11 @@ fun TransHomeScreen(
                         contentPadding = PaddingValues(16.dp),
                         verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
-                        items(state.transactions) { transaction ->
+                        items(state.transactions.size) { index ->
                             TransactionItem(
-                                transaction = transaction,
-                                onEdit = { viewModel.onEvent(TransHomeContract.Event.NavigateToDetails(transaction.id)) },
-                                onDelete = { viewModel.onEvent(TransHomeContract.Event.DeleteTransaction(transaction.id)) }
+                                transaction = state.transactions[index],
+                                onEdit = { viewModel.onEvent(TransHomeContract.Event.NavigateToDetails(state.transactions[index].id)) },
+                                onDelete = { viewModel.onEvent(TransHomeContract.Event.DeleteTransaction(state.transactions[index].id)) }
                             )
                         }
                     }

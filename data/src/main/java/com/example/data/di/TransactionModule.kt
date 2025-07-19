@@ -1,8 +1,8 @@
-package com.example.financetracker.di
+package com.example.data.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.financetracker.data.local.TransactionDB
+import com.example.data.local.TransactionDB
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

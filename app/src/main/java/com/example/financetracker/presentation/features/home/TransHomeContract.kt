@@ -1,6 +1,6 @@
 package com.example.financetracker.presentation.features.home
 
-import com.example.financetracker.domain.model.Transaction
+import com.example.domain.model.Transaction
 
 object TransHomeContract {
     

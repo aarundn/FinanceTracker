@@ -2,12 +2,18 @@ package com.example.financetracker.presentation.features.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.financetracker.domain.model.Transaction
-import com.example.financetracker.domain.usecases.AddTransactionUseCase
-import com.example.financetracker.domain.usecases.DeleteTransactionUseCase
-import com.example.financetracker.domain.usecases.GetAllTransactionsUseCase
+import com.example.domain.model.Transaction
+import com.example.domain.model.TransactionType
+import com.example.domain.usecases.AddTransactionUseCase
+import com.example.domain.usecases.DeleteTransactionUseCase
+import com.example.domain.usecases.GetAllTransactionsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -66,10 +72,10 @@ class TransHomeViewModel @Inject constructor(
                 
                 getAllTransactionsUseCase.invoke().collect { transactions ->
                     val totalIncome = transactions
-                        .filter { it.type == com.example.financetracker.domain.model.TransactionType.INCOME }
+                        .filter { it.type == TransactionType.INCOME }
                         .sumOf { it.amount }
                     val totalExpenses = transactions
-                        .filter { it.type == com.example.financetracker.domain.model.TransactionType.EXPENSE }
+                        .filter { it.type == TransactionType.EXPENSE }
                         .sumOf { it.amount }
                     val balance = totalIncome - totalExpenses
 

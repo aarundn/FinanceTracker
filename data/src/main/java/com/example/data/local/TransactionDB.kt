@@ -1,8 +1,8 @@
-package com.example.financetracker.data.local
+package com.example.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.financetracker.data.model.TransactionEntity
+import com.example.data.model.TransactionEntity
 
 @Database(
     entities = [TransactionEntity::class],

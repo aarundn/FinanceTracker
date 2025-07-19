@@ -1,7 +1,7 @@
-package com.example.financetracker.di
+package com.example.data.di
 
-import com.example.financetracker.data.repositories.TransactionRepositoryImpl
-import com.example.financetracker.domain.repositories.TransactionRepository
+import com.example.data.repositories.TransactionRepositoryImpl
+import com.example.domain.repositories.TransactionRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -11,8 +11,9 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class RepositoryModule {
-    @Singleton
+
     @Binds
+    @Singleton
     abstract fun bindTransactionsRepository(
         transactionImpl : TransactionRepositoryImpl
     ): TransactionRepository

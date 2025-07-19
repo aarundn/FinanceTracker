@@ -1,10 +1,10 @@
-package com.example.financetracker.data.repositories
+package com.example.data.repositories
 
-import com.example.financetracker.data.local.TransactionDao
-import com.example.financetracker.domain.mappers.toEntity
-import com.example.financetracker.domain.mappers.toTransactionList
-import com.example.financetracker.domain.model.Transaction
-import com.example.financetracker.domain.repositories.TransactionRepository
+import com.example.data.local.TransactionDao
+import com.example.data.mappers.toEntity
+import com.example.data.mappers.toTransactionList
+import com.example.domain.model.Transaction
+import com.example.domain.repositories.TransactionRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject

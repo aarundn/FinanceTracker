@@ -1,6 +1,7 @@
 package com.example.financetracker.presentation.features.details
 
-import com.example.financetracker.domain.model.TransactionType
+import com.example.domain.model.TransactionType
+
 
 object TransDetailsContract {
     

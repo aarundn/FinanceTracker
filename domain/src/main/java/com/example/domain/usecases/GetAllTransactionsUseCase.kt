@@ -1,7 +1,7 @@
-package com.example.financetracker.domain.usecases
+package com.example.domain.usecases
 
-import com.example.financetracker.domain.model.Transaction
-import com.example.financetracker.domain.repositories.TransactionRepository
+import com.example.domain.model.Transaction
+import com.example.domain.repositories.TransactionRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

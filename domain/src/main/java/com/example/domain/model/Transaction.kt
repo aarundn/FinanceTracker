@@ -1,4 +1,4 @@
-package com.example.financetracker.domain.model
+package com.example.domain.model
 
 data class Transaction (
     val id: Int,
